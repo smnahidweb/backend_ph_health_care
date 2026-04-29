@@ -1,0 +1,38 @@
+{
+  "name": "backend_ph_health_care",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/smnahidweb/backend_ph_health_care#readme",
+  "bugs": {
+    "url": "https://github.com/smnahidweb/backend_ph_health_care/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smnahidweb/backend_ph_health_care.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/server.js",
+    "build": "tsc",
+    "dev": "tsc watch src/server.ts",
+    "lint": "eslint ./src**/*",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.6.0",
+    "eslint": "^10.2.1",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.59.1"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  }
+}
