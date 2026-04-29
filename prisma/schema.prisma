@@ -1,0 +1,31 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model speciality {
+
+id String @id @default(uuid(7))
+title String @db.VarChar(100)
+description String? @db.VarChar(500)
+icon String? @db.VarChar(255)
+createAt DateTime @default(now())
+updateAt DateTime @default(now())
+
+isDeleted Boolean @default(false)
+deleteAt DateTime?
+
+@@index([isDeleted],name:"idx_specialty_isDeleted")
+@@index([title],name:"idx_specialty_title")
+@@map("specialties")
+
+}

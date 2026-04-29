@@ -1,4 +1,5 @@
 import express, { Application, Request, Response } from "express"
+import { prisma } from "./App/lib/prisma";
 
 const App: Application = express()
 
@@ -6,10 +7,19 @@ const PORT = 5000
 
 App.use(express.json());
 
-App.get("/", (req:Request, res:Response) => {
+App.get("/", async(req:Request, res:Response) => {
   
-    res.send(`PH Backend server is running on the port : ${PORT}`)
+    const result = await prisma.speciality.create({
+        data:{
+            title: "cardiology"
+        }
+    })
 
+    res.status(201).json({
+        success:true,
+        message:"Created successfully",
+        data: result
+    })
 })
 
 
