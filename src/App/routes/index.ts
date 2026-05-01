@@ -1,7 +1,11 @@
 import { Router } from "express";
 import { specilityRoutes } from "../modules/speciality/speciality.router";
+import { authRouter } from "../modules/auth/auth.router";
+
 
 const router = Router();
+
+router.use('/auth',authRouter)
 
 router.use("/specialties", specilityRoutes)
 

@@ -82,8 +82,6 @@ const updateSpecialitiesById = async (id: string,payload:speciality) => {
     catch (error) {
         console.log(error)
     }
-
-    
 }
 
 export const specialityServices = {
