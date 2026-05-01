@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { catchAsync } from "../../shared/catchAsync";
 import { AuthServices } from "./auth.service";
-import { success } from "better-auth";
 
 const registerPatient = catchAsync(
 
@@ -25,6 +24,26 @@ const registerPatient = catchAsync(
 )
 
 
+// loginUser
+
+const loginUser = catchAsync(
+
+  async(req:Request,res:Response)=>{
+       const payload = req.body;
+       const result = await AuthServices.loginUser(payload)
+
+       res.status(200).json({
+        success:true,
+        message:"User Login Successfull",
+        data:result
+       })
+
+  }
+
+)
+
+
 export const AuthController = {
-    registerPatient
+    registerPatient,
+    loginUser
 }
