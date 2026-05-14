@@ -11,12 +11,7 @@ export const catchAsync = (fn: RequestHandler) => {
             
         }
         catch (error: any) {
-            console.log(error)
-            res.json({
-                message: "somethinks is wrong",
-                success: false,
-                error: error.message
-            })
+            next(error)
         }
 
     }

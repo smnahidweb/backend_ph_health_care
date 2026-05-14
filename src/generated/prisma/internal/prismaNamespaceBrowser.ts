@@ -55,6 +55,7 @@ export const ModelName = {
   Session: 'Session',
   Account: 'Account',
   Verification: 'Verification',
+  Patient: 'Patient',
   speciality: 'speciality'
 } as const
 
@@ -135,6 +136,24 @@ export const VerificationScalarFieldEnum = {
 } as const
 
 export type VerificationScalarFieldEnum = (typeof VerificationScalarFieldEnum)[keyof typeof VerificationScalarFieldEnum]
+
+
+export const PatientScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  email: 'email',
+  profilePicture: 'profilePicture',
+  contactNumber: 'contactNumber',
+  address: 'address',
+  isdeleted: 'isdeleted',
+  createdAt: 'createdAt',
+  deletedAt: 'deletedAt',
+  createAt: 'createAt',
+  updatedAt: 'updatedAt',
+  userId: 'userId'
+} as const
+
+export type PatientScalarFieldEnum = (typeof PatientScalarFieldEnum)[keyof typeof PatientScalarFieldEnum]
 
 
 export const SpecialityScalarFieldEnum = {
