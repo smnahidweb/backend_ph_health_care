@@ -17,6 +17,7 @@ model Doctor{
   currentWorkplace String?
   designation String?
   averageRating Float @default(0)
+  doctorSpeciality doctorSpeciality[]
 
   // relations
   userId String @unique
